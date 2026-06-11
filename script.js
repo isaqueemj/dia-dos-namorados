@@ -1,10 +1,11 @@
 /* CONFIGURAR AQUI */
 const senhaCorreta = "30052026";
 const nomeAmor = "Ana Luiza";
-let contador = 0
+let contador = 0;
+
 /* LOGIN */
 function entrar() {
-    
+
     const senha = document.getElementById("senha").value;
 
     if (senha === senhaCorreta) {
@@ -15,9 +16,10 @@ function entrar() {
     } else {
         if (contador < 2) {
             document.getElementById("erro").innerText = "Senha incorreta ❤️";
-            contador += 1
+            contador++;
         } else {
-            document.getElementById("erro").innerText = "❤️ Dica Extra: Data do nosso namoro (Só os numeros)❤️";
+            document.getElementById("erro").innerText =
+                "❤️ Dica Extra: Data do nosso namoro (Só os numeros) ❤️";
         }
     }
 }
@@ -27,9 +29,8 @@ function iniciar() {
     document.getElementById("titulo").innerText =
         "Eu te amo, " + nomeAmor + " ❤️";
 
-    criarFundo(); // ✅ novo fundo
+    criarFundo(); // ✅ fundo
 }
-
 
 /* FUNDO */
 const imagens = Array.from(
@@ -41,7 +42,7 @@ function criarFundo() {
     const bg = document.querySelector(".bg");
     bg.innerHTML = "";
 
-    const total = 80; // 🔥 força preenchimento grande
+    const total = 80; // quantidade de imagens
 
     for (let i = 0; i < total; i++) {
         const img = document.createElement("img");
@@ -52,24 +53,13 @@ function criarFundo() {
     }
 }
 
-function mudarFundo() {
-    const bg = document.querySelector(".bg");
-    const img = imagens[Math.floor(Math.random() * imagens.length)];
-    bg.style.backgroundImage = `url(${img})`;
-}
-
 /* CARTA */
 function abrir() {
     document.getElementById("mensagem").innerHTML =
-        "<p>Desde que você entrou na minha vida, tudo ficou mais bonito. ❤️<br>Eu te amo muito ❤️<br>Você é a melhor parte da minha vida ❤️</p>";
+        "<p>Desde que você entrou na minha vida, tudo ficou mais bonito ❤️<br>Eu te amo muito ❤️<br>Você é a melhor parte da minha vida ❤️</p>";
 }
 
-/* MÚSICA */
-const musica = document.getElementById("musica");
-document.getElementById("btnMusica").onclick = () => {
-    musica.paused ? musica.play() : musica.pause();
-};
-
+/* ATUALIZA FUNDO AUTOMATICAMENTE */
 window.addEventListener("load", criarFundo);
 window.addEventListener("resize", criarFundo);
-
+``
