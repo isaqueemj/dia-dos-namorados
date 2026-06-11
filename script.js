@@ -42,13 +42,15 @@ function criarFundo() {
     const bg = document.querySelector(".bg");
     bg.innerHTML = "";
 
-    const total = 80; // quantidade de imagens
+    const total = 40; // quantidade de imagens
 
     for (let i = 0; i < total; i++) {
         const img = document.createElement("img");
 
         img.src = imagens[i % imagens.length];
-
+        
+        img.loading = "lazy";
+        
         bg.appendChild(img);
     }
 }
