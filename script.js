@@ -43,7 +43,7 @@ function criarFundo() {
     bg.innerHTML = "";
 
     const largura = window.innerWidth;
-    const altura = window.innerHeight;
+    const altura = document.body.scrollHeight;
 
     const tamanho = 100; // mesmo do CSS
 
@@ -78,3 +78,6 @@ const musica = document.getElementById("musica");
 document.getElementById("btnMusica").onclick = () => {
     musica.paused ? musica.play() : musica.pause();
 };
+
+window.addEventListener("load", criarFundo);
+window.addEventListener("resize", criarFundo);
