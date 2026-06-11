@@ -140,15 +140,6 @@ body {
     cursor:pointer;
 }
 
-/* BOTÃO MUSICA */
-#btnMusica {
-    position:fixed;
-    top:20px;
-    right:20px;
-    padding:10px;
-    border:none;
-}
-
 @media (max-width: 600px) {
 
     .bg {
