@@ -39,32 +39,40 @@ const imagens = Array.from(
 
 function criarFundo() {
     const bg = document.querySelector(".bg");
-
     bg.innerHTML = "";
 
     const largura = window.innerWidth;
     const altura = Math.max(
-    window.innerHeight,
-    document.documentElement.clientHeight
-);
+        window.innerHeight,
+        document.documentElement.clientHeight
+    );
 
-
-    const tamanho = 100; // mesmo do CSS
+    const tamanho = 140;
+    const linhasExtra = 2;
 
     const colunas = Math.ceil(largura / tamanho);
-    const linhas = Math.ceil(altura / tamanho);
+    const linhas = Math.ceil(altura / tamanho) + linhasExtra;
 
     const total = colunas * linhas;
 
-    for (let i = 0; i < total; i++) {
-        const img = document.createElement("img");
+    let imgsEmbaralhadas = [...imagens].sort(() => Math.random() - 0.5);
 
-        img.src = imagens[i % imagens.length];
+    let index = 0;
+
+    for (let i = 0; i < total; i++) {
+
+        if (index >= imgsEmbaralhadas.length) {
+            imgsEmbaralhadas = [...imagens].sort(() => Math.random() - 0.5);
+            index = 0;
+        }
+
+        const img = document.createElement("img");
+        img.src = imgsEmbaralhadas[index];
 
         bg.appendChild(img);
+        index++;
     }
 }
-
 function mudarFundo() {
     const bg = document.querySelector(".bg");
     const img = imagens[Math.floor(Math.random() * imagens.length)];
