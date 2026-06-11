@@ -62,3 +62,4 @@ function abrir() {
 /* ATUALIZA FUNDO AUTOMATICAMENTE */
 window.addEventListener("load", criarFundo);
 window.addEventListener("resize", criarFundo);
+``
