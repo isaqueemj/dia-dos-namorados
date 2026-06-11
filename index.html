@@ -2,14 +2,13 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ✅ EVITA ZOOM AUTOMÁTICO -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 <title>❤️ Surpresa ❤️</title>
 
 <link rel="stylesheet" href="style.css">
-
-<!-- Fonte (CORRIGIDO) -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -17,9 +16,20 @@
 <!-- LOGIN -->
 <div id="login">
     <h1>💖 Uma surpresa especial 💖</h1>
-    <input type="password" id="senha" placeholder="Digite a senha">
-    <h4>❤️❤️❤️ Dica: A senha é uma data importante ❤️❤️❤️</h4>
+
+    <!-- ✅ INPUT NUMÉRICO -->
+    <input 
+        type="tel"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="senha"
+        placeholder="Digite a senha"
+    >
+
+    <p>💖💖💖 Dica: A senha é uma data importante 💖💖💖</p>
+
     <button onclick="entrar()">Entrar</button>
+
     <p id="erro"></p>
 </div>
 
@@ -28,18 +38,18 @@
 
     <div class="bg"></div>
 
-    <!-- Música -->
-    <button id="btnMusica">🎵</button>
-    <audio id="musica" loop>
-        <source src="imagens/musica.mp3">
-    </audio>
-
-    <!-- Carta -->
+    <!-- CARTA -->
     <div class="container">
         <div class="carta" id="carta">
+
             <h2 id="titulo"></h2>
 
             <button onclick="abrir()">Abrir 💌</button>
+
+            <p>
+                Desde que você entrou na minha vida,
+                tudo ficou mais bonito ❤️
+            </p>
 
             <div id="mensagem"></div>
 
