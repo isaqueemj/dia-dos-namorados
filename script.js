@@ -43,7 +43,11 @@ function criarFundo() {
     bg.innerHTML = "";
 
     const largura = window.innerWidth;
-    const altura = document.body.scrollHeight;
+    const altura = Math.max(
+    window.innerHeight,
+    document.documentElement.clientHeight
+);
+
 
     const tamanho = 100; // mesmo do CSS
 
@@ -73,5 +77,12 @@ function abrir() {
         "<p>Desde que você entrou na minha vida, tudo ficou mais bonito. ❤️<br>Eu te amo muito ❤️<br>Você é a melhor parte da minha vida ❤️</p>";
 }
 
+/* MÚSICA */
+const musica = document.getElementById("musica");
+document.getElementById("btnMusica").onclick = () => {
+    musica.paused ? musica.play() : musica.pause();
+};
+
 window.addEventListener("load", criarFundo);
 window.addEventListener("resize", criarFundo);
+
